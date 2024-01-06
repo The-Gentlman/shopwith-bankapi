@@ -14,7 +14,10 @@ body {
   font-family: "Work Sans", sans-serif;
   box-sizing: border-box;
 }
-
+a {
+  color: white;
+  text-decoration: none;
+}
 /* header{} */
 #hero {
   width: 100%;
@@ -90,9 +93,10 @@ body {
 
 .left {
   position: absolute;
-  width: 40%;
+  width: 55%;
   left: 10%;
-  height: 70%;
+  height: 350px;
+  top: 100px;
 }
 .title {
   text-align: left;
@@ -142,8 +146,9 @@ body {
 
 .band {
   position: absolute;
-  top: 45vw;
-  width: 100%;
+  top: 650px;
+  width: 102%;
+  left: -5px;
   margin: auto;
   display: flex;
   justify-content: space-around;
@@ -163,9 +168,11 @@ body {
 }
 
 .choose-section {
+  margin-top: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  left: 0px;
 }
 
 .choose-section-title {
@@ -217,10 +224,9 @@ body {
 }
 
 .discover-card-details {
-  margin-top: 100px;
   margin-bottom: 0;
   padding: 0;
-  margin-left: 50px;
+  margin-left: 0px;
 }
 
 .section-description {
@@ -326,11 +332,41 @@ body {
   #navbar {
     display: none;
   }
+  .left {
+    height: auto;
+    top: 0px;
+  }
+  .discover-card-details .title {
+    font-size: 20pt;
+    width: auto;
+  }
+  .discover-card-details {
+    position: absolute;
+    margin-left: 20px;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .discover-card-button {
+    color: white;
+  }
+  .discover-card-details .title {
+    font-size: 20pt;
+  }
+  .band {
+    display: none;
+  }
   .image-slider {
     flex-direction: column;
+    width: 80%;
   }
-
   .imgs {
     width: 80vw;
+    margin: 10px;
+    border-radius: 5px 5px 0px 0px;
+  }
+  .demo-card {
+    width: 40vw;
   }
 }
