@@ -1,0 +1,142 @@
+{% extends "main.html" %}
+<!--  -->
+{% block content %}
+{% load static %}
+<div class="main-header"></div>
+<section id="hero">
+    <div class="container">
+        <div class="left">
+            <div class="title">
+                <span style="font-size: 120px">BEST</span>
+                <br />
+                <span style="font-size: 65px" class="gradiant-text">PRICE </span>
+                <span style="font-size: 65px">AND QUALITY</span>
+                <br />
+            </div>
+            <p class="header-text">
+                MoonGift is the premier website for purchasing gift cards at
+                discounted prices. With our automated systems, we can deliver gift
+                cards instantly after payment - the fastest in the industry. With
+                the lowest prices, fastest delivery, and 100% money-back
+                guarantee, MoonGift is the best place to buy gift cards online.
+            </p>
+            <div>
+                <div class="buttons">
+                    {% if request.user.is_authenticated %}
+                    <a class="btn btn1" href="">BUY</a>
+
+                    {% else %}
+                    <a class="btn btn1" href="{% url 'login' %}">LOGIN</a>
+
+                    {% endif %}
+
+                    <div class="btn">BUY NOW</div>
+                </div>
+
+                <div class="overview">
+                    <div class="overview-items">
+                        <h3 class="gradiant-text">500+</h3>
+                        <h3>Happy costumer</h3>
+                    </div>
+                    <div class="overview-items">
+                        <h3>+2</h3>
+                        <h3>year activity</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- horizon band -->
+<div class="band">
+    <div>
+
+        <img style="width: 20px; cursor: pointer" src="{% static 'image/purple_gem.png' %}" alt="gem" />
+        <span>CLASH OF CLANS</span>
+    </div>
+    <div>
+        <img style="width: 20px; cursor: pointer" src="{% static 'image/green_gem.png' %}" alt="gem" />
+        <span>CALL OF DUTY - MOBILE</span>
+    </div>
+    <div>
+        <img style="width: 20px; cursor: pointer" src="{% static 'image/purple_gem.png' %}" alt="gem" />
+        <span>PUBG</span>
+    </div>
+</div>
+</header>
+
+<!-- FAVOURITE SECTION -->
+<main>
+    <section class="choose-section">
+        <div>
+            <p class="choose-section-title">
+                CHOOSE YOUR<br />
+                <span class="gradiant-text">FAVOURITE</span>
+            </p>
+        </div>
+        <div class="image-slider">
+            <img class="imgs" src="{% static 'image/clash.png' %}" alt="clashofclans" />
+            <img class="imgs" src="{% static 'image/cod.webp' %}" alt="callofdutymobile" />
+            <img class="imgs" src="{% static 'image/pubg.webp' %}" alt="pubg" />
+        </div>
+
+        <div class="buttons">
+            {% if request.user.is_authenticated %}
+            <a class="btn btn1" href="">BUY</a>
+
+            {% else %}
+            <a class="btn btn1" href="{% url 'login' %}">LOGIN</a>
+
+            {% endif %}
+            <button class="btn">VIEW ALL</button>
+        </div>
+    </section>
+    <!-- DISCOVER SECTION -->
+    <section class="discover-section">
+        <div class="disocver-card">
+            <img class="imgcard" src="{% static 'image/pnghero.png' %}" alt="heroboy" />
+
+            <div class="discover-card-details">
+                <p class="title">
+                    DISCOVER<br />
+                    <span class="gradiant-text">YOUR FAVOURITE</span>
+                    <br />GAME
+                </p>
+
+                <p class="section-description">
+                    While browsing a favorite gaming website, an exciting new medieval
+                    fantasy RPG caught my eye. After reading positive reviews about
+                    its immersive gameplay and expansive world, I downloaded the game
+                    and was quickly hooked by its compelling characters and addictive
+                    progression. Within just a few hours of play, I knew this would
+                    become my new favorite gaming find on the website.
+                </p>
+                {% if request.user.is_authenticated %}
+                <a class="discover-card-button" href="">BUY</a>
+                {% else %}
+                <a class="discover-card-button" href="{% url 'login' %}">LOGIN NOW</a>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+
+    <!-- DEMO CARD SECTION -->
+
+    <section class="cards">
+        <div class="demo-card">
+            <img class="gameimg" src="{% static 'image/pubg.webp' %}" alt="pubgmobile" />
+            <p class="gamename">PUBGE MOBILE GAME</p>
+            <div class="cardprofile">
+                <img class="profilepic" src="{% static 'image/Profilepic.jpg' %}" alt="Profilepicture" />
+                <div id="content">
+                    <p class="gameowner">TENCENT GAME</p>
+                    <p class="gamerate">1 milion </p>
+                </div>
+            </div>
+
+            <button id="cardbtn" class="btn btn1">PURCHASE</button>
+        </div>
+    </section>
+
+    {% endblock content %}

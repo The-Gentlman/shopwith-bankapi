@@ -1,0 +1,131 @@
+{% extends "main.html" %}
+<!--  -->
+{% block content %}
+<!--  -->
+<style>
+  .room-form-page {
+    display: grid;
+    grid-template-columns: 3fr 4fr 2fr;
+  }
+
+  .creating-from {
+    width: 400px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(25, 20, 36);
+    padding: 30px;
+    border-radius: 1em;
+    background-color: rgb(30, 30, 31);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.872);
+    font-family: "Quicksand", sans-serif;
+    color: rgb(180, 180, 180);
+  }
+
+  .submit-botton {
+    background-color: rgb(69, 68, 74);
+    color: rgb(180, 180, 180);
+    height: 30px;
+    width: 100px;
+    border: 0px;
+    outline: transparent;
+    border-radius: 1em;
+    margin: 50px 145px;
+  }
+
+  .submit-botton:hover {
+    background-color: rgb(45, 44, 48);
+    border: 1px solid rgb(132, 132, 132);
+    font-weight: bold;
+  }
+
+  .labelput {
+    margin: 20px 0px;
+  }
+
+  .labelput p {
+    margin: 0px;
+  }
+
+  .labelput input {
+    background-color: #f2f2f2;
+    font-size: 16px;
+    color: #2a2a2a;
+    border-radius: 1em;
+    padding: 10px;
+    resize: none;
+    width: 380px;
+  }
+
+  .sign {
+    padding: 3px;
+  }
+
+  .sign:hover {
+    border-bottom: 1px solid;
+  }
+
+  .form-control {
+    font-size: 16px;
+    color: #121212;
+    border-radius: 1em;
+    padding: 10px;
+    resize: none;
+    width: 380px;
+  }
+
+  .form-label {
+    margin-bottom: 40px;
+  }
+</style>
+{% if page == 'login' %}
+
+<br />
+<section class="room-form-page">
+  <div></div>
+  <div class="creating-from">
+    <form method="POST" action="">
+      {% csrf_token %}
+      <div class="labelput">
+        <p>Username:</p>
+        <input type="text" name="username" />
+      </div>
+      <div class="labelput">
+        <p>Password:</p>
+        <input type="password" name="password" />
+      </div>
+      <div>
+        <input type="submit" value="Login" class="submit-botton" />
+      </div>
+    </form>
+    <p>havent signed up yet ?</p>
+    <a href="{% url 'register' %}" class="sign">Sign Up</a>
+  </div>
+  <div></div>
+</section>
+
+{% else %}
+<br />
+
+<section class="room-form-page">
+  <div></div>
+  <div class="creating-from">
+    <form method="POST" action="">
+      {% csrf_token %}
+
+      <p class="form-label">Username: {{ form.username }}</p>
+      <p class="form-label">Password: {{ form.password1 }}</p>
+      <p class="form-label">Password Confirmation: {{ form.password2 }}</p>
+
+      <input type="submit" value="Register" class="submit-botton" />
+    </form>
+    <p>already signed up ?</p>
+    <a href="{% url 'login' %}" class="sign">Login</a>
+  </div>
+  <div></div>
+</section>
+{% endif %}
+<!--  -->
+{% endblock content %}
